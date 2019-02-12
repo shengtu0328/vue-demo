@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <style>
+    </style>
+    <script src="https://cdn.bootcss.com/vue/2.5.19/vue.min.js"></script>
+</head>
+<body>
+<!--:key="xxxx" 能提高性能，但是每个xxxx都要唯一-->
+
+
+<div id="app">
+    <div v-show="show">hahahaha</div>
+    <button @click="handleclick">toggle</button>
+    <ul>
+        <li v-for="(item,index) of alist" :key="index">{{item}}</li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            show: true,
+            alist:[11,2222,33]
+        },
+        methods:{
+            handleclick:function () {
+                this.show=!this.show
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <style>
+        .bg {
+            color: red;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/vue/2.5.19/vue.min.js"></script>
+</head>
+<body>
+
+<!--
+单项绑定   v-bind: 等于 :
+双向绑定   v-model
+-->
+<div id="app">
+    <div v-bind:title="msg">
+        title 在此
+    </div>
+
+    <input :value="content">
+    <input v-model="content">
+
+    <div>{{content}}</div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: 'otto',
+            content: 'conttt'
+        },
+        methods: {}
+    })
+
+</script>
+
+</body>
+</html>

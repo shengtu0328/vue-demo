@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <style>
+        .bg {
+            color: red;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/vue/2.5.19/vue.min.js"></script>
+</head>
+<body>
+
+
+<!--v-on:click 等于 @click-->
+<div class="bg" @click="handleclick">
+    helloword！！！{{msg}}
+    <div v-text="msg">
+
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '.bg',
+        data:{
+        msg:'otto'
+        },
+        methods:{
+            handleclick:function () {
+                alert(888);
+                this.msg="wow!"
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

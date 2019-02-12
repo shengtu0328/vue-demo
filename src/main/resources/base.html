@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <style>
+    </style>
+    <script src="https://cdn.bootcss.com/vue/2.5.19/vue.min.js"></script>
+</head>
+<body>
+
+
+<!--
+
+el属性就是挂载点 也就是<div id="app">
+
+挂载点里的内容就是模版,即<div id="app">内部的内容<div v-bind:title="msg">，也可以写在vue实例的 templete属性中
+
+实例就是 模版+数据 就是 new Vue
+
+-->
+
+<div id="app">
+    <div v-bind:title="msg">
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: 'otto',
+            content: 'conttt'
+        },
+    })
+
+</script>
+
+</body>
+</html>

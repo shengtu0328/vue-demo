@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <style>
+        .bg {
+            color: red;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/vue/2.5.19/vue.min.js"></script>
+</head>
+<body>
+<!--watch 相当于js中的onchange事件-->
+
+<div id="app">
+
+    姓：<input v-model="firstname">
+    名:<input v-model="lastname">
+
+    <div>{{firstname}}{{lastname}}</div>
+    <div>{{fullname}}</div>
+
+
+    <div>{{count}}</div>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            firstname: '',
+            lastname: '',
+            count:0
+        },
+        computed: {
+            fullname:function(){
+                return this.firstname+"--"+this.lastname
+            }
+        },
+        watch:{
+            firstname: function(){
+               this.count ++
+            },
+            lastname: function(){
+                this.count ++
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>
