@@ -27,7 +27,8 @@
 
 <script>
 
-    //注册一个vue 全局组件 todo-item, 其实每一个组件都是一个vue的实例，父组件依靠属性的方式向子组件传递值
+    //注册一个vue 全局组件 todo-item, 其实每一个组件都是一个vue的实例，子组件依靠props来接受父组件传递的值
+    //如果我们想使父组件的数据，则必须先在子组件中定义props属性，也就是props: ['content','index'],
     Vue.component('todo-item',{
         props:['content','index'],
         template:'<li @click="handleClick">{{content}}</li>',
